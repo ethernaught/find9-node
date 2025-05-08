@@ -1,6 +1,17 @@
 const datagram = require('dgram');
 
-exports.client = (token, host, port) => {
+const { version } = require('../package.json');
+
+console.log('Package version:', version);
+
+exports.client = (user = '', password = '', host, port) => {
+
+
+
+
+
+
+	/*
 	const socket = datagram.createSocket('udp4'); // or 'udp6'
 
 	socket.on('message', (msg, rinfo) => {
@@ -13,11 +24,14 @@ exports.client = (token, host, port) => {
 
 	// Sending data
 	socket.send('Hello, UDP', 41234, 'localhost', (err) => {
-		if (err) console.error(err);
+		if(err){
+			console.error(err);
+		}
 	});
+	*/
 };
 
 exports.version = () => {
-	return '0.1.0';
+	return version;
 };
 
